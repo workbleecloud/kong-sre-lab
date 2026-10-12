@@ -1,0 +1,6 @@
+apiVersion: v2
+name: kong-lab-api
+description: Lab Flask service with Redis (training lab)
+type: application
+version: 0.1.0
+appVersion: "v1"

@@ -1,8 +1,6 @@
 FROM python:3.12-slim
 
 WORKDIR /app
-ARG APP_VERSION=v1
-ENV APP_VERSION=${APP_VERSION}
 
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
@@ -16,5 +14,8 @@ EXPOSE 8080
 
 HEALTHCHECK --interval=10s --timeout=3s --retries=3 \
     CMD python -c "import urllib.request; urllib.request.urlopen('http://localhost:8080/healthz', timeout=2)" || exit 1
+
+ARG APP_VERSION=v1
+ENV APP_VERSION=${APP_VERSION}
 
 CMD ["python3", "app.py"]

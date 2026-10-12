@@ -1,0 +1,9 @@
+kind: Cluster
+apiVersion: kind.x-k8s.io/v1alpha4
+name: kong-lab
+nodes:
+  - role: control-plane
+    extraPortMappings:
+      - containerPort: 30080 # NodePort inside the node container (Kong's proxy port)
+        hostPort: 8000      # reachable from localhost:8000 on the host machine
+        protocol: TCP
