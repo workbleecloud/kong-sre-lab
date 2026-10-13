@@ -1,0 +1,7 @@
+gateway:
+  proxy:
+    type: NodePort
+    http:
+      nodePort: 30080
+    tls:
+      enabled: false

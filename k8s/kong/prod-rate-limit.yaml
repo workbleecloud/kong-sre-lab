@@ -1,0 +1,13 @@
+apiVersion: configuration.konghq.com/v1
+kind: KongPlugin
+metadata:
+  name: rate-limit
+  namespace: prod
+plugin: rate-limiting
+config:
+  minute: 5
+  policy: redis
+  limit_by: consumer
+  redis:
+    host: api-redis.prod.svc.cluster.local
+    port: 6379

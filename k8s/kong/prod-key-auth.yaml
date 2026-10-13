@@ -1,0 +1,6 @@
+apiVersion: configuration.konghq.com/v1
+kind: KongPlugin
+metadata:
+  name: key-auth
+  namespace: prod
+plugin: key-auth
